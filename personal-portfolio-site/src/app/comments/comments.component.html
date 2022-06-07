@@ -7,9 +7,10 @@
       <mat-card-title>Comment</mat-card-title>
     </mat-card-header>
     <mat-card-content>
+      <fieldset >
       <div>
         <mat-form-field>
-        <input matInput placeholder="Your name" id="n1" #commentName [(ngModel)]="name">
+        <input matInput [formControl]="control" required placeholder="Your name" id="n1" #commentName [(ngModel)]="name">
       </mat-form-field>
     </div>
     <div>
@@ -18,10 +19,12 @@
         <textarea matInput  #commentComment [(ngModel)]="comment" id="c1"></textarea>
       </mat-form-field>
     </div>
+  </fieldset>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button class="add-button" (click)="post()">Comment</button>
+      <button mat-button [disabled]="!control.valid" class="add-button" (click)="post()">Comment</button>
     </mat-card-actions>
+
   </mat-card>
 
 

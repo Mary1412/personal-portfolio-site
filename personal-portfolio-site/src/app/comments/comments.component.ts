@@ -29,10 +29,12 @@ export class CommentsComponent implements OnInit {
   
   isActive = true;
 
-  
+  /*
   Comcontrol=new FormGroup({
     NameFormControl : new FormControl('', [Validators.required])
-  })
+  })*/
+
+   control = new FormControl('', Validators.required);
 
   
 
