@@ -1,0 +1,27 @@
+
+<h1>You can set feedback on this page</h1>
+
+<mat-card class="example-card"  [class.mat-elevation-z8]="isActive">
+    <mat-card-header>
+      
+      <mat-card-title>Comment</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <mat-form-field>
+        <input matInput placeholder="Your name" id="n1" #commentName [(ngModel)]="name">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Your comment</mat-label>
+        <textarea matInput  #commentComment [(ngModel)]="comment" id="c1"></textarea>
+      </mat-form-field>
+    </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button class="add-button" (click)="post()">Comment</button>
+    </mat-card-actions>
+  </mat-card>
+
+

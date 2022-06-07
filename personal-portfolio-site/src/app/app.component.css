@@ -1,0 +1,9 @@
+nav{
+    text-align: right;
+}
+a{
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
