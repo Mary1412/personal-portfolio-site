@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 
 
+
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
@@ -12,7 +13,7 @@ export class CommentsComponent implements OnInit {
 
 
 
-  name:string="";
+/*
   comment:string="";
 
 
@@ -24,32 +25,53 @@ export class CommentsComponent implements OnInit {
 
   user = {     
     name: "John",  
-    comment: "comment"        
-  };
+    comment: "comment"  
+          
+  };*/
   
   isActive = true;
-
-  /*
-  Comcontrol=new FormGroup({
-    NameFormControl : new FormControl('', [Validators.required])
-  })*/
-
-   control = new FormControl('', Validators.required);
-
   
-
-
+  
+  comControl=new FormGroup({
+    control : new FormControl('', [Validators.required, Validators.pattern('^[а-яА-ЯёЁa-zA-Z0-9]+$')]),
+    text : new FormControl('', [Validators.required])
+  })
 
 
 
   constructor() { }
 
+
   ngOnInit(): void {
 
   }
 
+  comment=''
+  name:string='';
+
+
+  comments: string[] = [];
+  names:string[]=[];
+ 
+  add(comment: string) {
+    this.comments.push(comment);
+  }
+
+post(){
+  this.comments.push(this.name);
+ this.comments.push(this.comment);
+ this.comments.push( "\n");
+ this.name="";
+ this.comment=""
+  
+
+
+}
+
+/*
   post(){
    this.name2=(<HTMLInputElement>document.getElementById('n1')).value;
+   this.comment2=(<HTMLInputElement>document.getElementById('c1')).value;
    this.comment2=(<HTMLInputElement>document.getElementById('c1')).value;
 
 
@@ -66,19 +88,13 @@ export class CommentsComponent implements OnInit {
 
     const para2 = document.createElement("p");
     para2.innerText = this.comment2;
-   
-
-
+ 
 
 para0.appendChild(para);
 para0.appendChild(para2);
-       
-  
-       
+ 
 
-
-
-  }
+  }*/
 
 
 }

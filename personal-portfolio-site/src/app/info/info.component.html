@@ -1,4 +1,4 @@
-<div class="all">
+<!--<div class="all">
 <h1>
     Hello! I'm Mary Novikova.<br>
     I'm a front-end developer.  
@@ -41,4 +41,50 @@
     I am a third-year year student at Gomel State University.<br>
     My specialty is computer science and programming technologies.
   </h3>
-</div>
+</div>-->
+
+<h1 align="center">
+  Hello! I'm Mary Novikova.<br>
+  I'm a front-end developer.  
+</h1>
+<br>
+
+<mat-tab-group dynamicHeight>
+  <mat-tab label="Hard skills">
+    <div class="example-small-box mat-elevation-z4">
+      <mat-form-field appearance="fill">
+        <mat-label>Filter</mat-label>
+        <input matInput [(ngModel)]="searchStr" ><br>
+    </mat-form-field>
+    </div> 
+    <div class="example-large-box mat-elevation-z4">
+    <ul >
+      <li *ngFor="let skill of skills | search:searchStr">
+        {{skill.name}}
+      </li>
+    </ul>
+    </div>
+  </mat-tab>
+  <mat-tab label=" Soft skills">
+    <div class="example-small-box mat-elevation-z4">
+    <mat-form-field appearance="fill">
+      <mat-label>Filter</mat-label>
+      <input matInput  [(ngModel)]="searchStr2" ><br>
+  </mat-form-field>
+  </div>
+
+    <div class="example-large-box mat-elevation-z4">
+      <ul >
+        <li *ngFor="let skill2 of skills2 | search2:searchStr2">
+          {{skill2.name}}
+        </li>
+      </ul>
+    </div>
+  </mat-tab>
+  <mat-tab label=" Education">
+    <div class="example-large-box mat-elevation-z4">
+      I am a third-year year student at Gomel State University.<br>
+    My specialty is computer science and programming technologies.
+    </div>
+  </mat-tab>
+</mat-tab-group>

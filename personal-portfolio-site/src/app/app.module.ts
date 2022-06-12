@@ -28,13 +28,18 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatIconModule} from '@angular/material/icon';
 import { InfoComponent } from './info/info.component';
 import { CommentsComponent } from './comments/comments.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { SearchPipe } from './search.pipe';
+import { SearchPipe2 } from './search2.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     InfoComponent,
-    CommentsComponent
+    CommentsComponent,
+    SearchPipe,
+    SearchPipe2
   ],
   imports: [
     BrowserAnimationsModule,
@@ -52,6 +57,7 @@ import { CommentsComponent } from './comments/comments.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
