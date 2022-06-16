@@ -10,7 +10,7 @@
       <fieldset [formGroup]="comControl">
 
         <mat-form-field appearance="fill">
-          <input matInput formControlName="control" required placeholder="Your name" id="n1" #commentName [(ngModel)]="name"><br>
+          <input matInput formControlName="control" required placeholder="Your name" id="n1"  #commentName [(ngModel)]="name"><br>
           <mat-error *ngIf="!comControl">
               only letters, digits
             </mat-error>
@@ -32,10 +32,17 @@
 
   </mat-card>
 
+<!--
+  {{com}}
+-->
 
-  <div  *ngFor="let comment of comments">
+  <div  *ngFor="let comment of comments2">
  {{comment}}
   </div>
+
+
+
+
 
 
   

@@ -10,7 +10,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class SearchPipe implements PipeTransform{
     transform(skills: Skill[],value:string) {
         return skills.filter(skill =>{
-            return skill.name?.includes(value)
+            return skill.name?.toUpperCase().includes(value.toUpperCase())
         })
         
     }

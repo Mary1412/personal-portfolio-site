@@ -27,7 +27,13 @@ export class InfoComponent implements OnInit {
   selectedSkill2: Skill2 | undefined;
 
   ngOnInit(): void {
+   
   }
 
+
+  qq(){
+    const para0 =<HTMLInputElement>document.getElementById('p0');
+    para0.style.visibility="hidden";
+  }
 
 }
